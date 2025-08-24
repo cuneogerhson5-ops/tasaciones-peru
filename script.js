@@ -1,3 +1,34 @@
+function checkLogin() {
+    const password = document.getElementById("password").value;
+    const errorElement = document.getElementById("loginError");
+    
+    const correctPassword = "lima2025"; // Cambia aquí tu contraseña
+
+    if (password === correctPassword) {
+        document.getElementById("loginContainer").style.display = "none";
+        document.getElementById("calculatorContainer").style.display = "block";
+        loadDistricts(); 
+    } else {
+        errorElement.textContent = "❌ Contraseña incorrecta";
+        errorElement.style.display = "block";
+        document.getElementById("password").value = "";
+    }
+}
+
+function logout() {
+    document.getElementById("calculatorContainer").style.display = "none";
+    document.getElementById("loginContainer").style.display = "block";
+    document.getElementById("password").value = "";
+    document.getElementById("loginError").style.display = "none";
+    clearForm(); 
+}
+
+document.getElementById("password").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        checkLogin();
+    }
+});
+
 // ===============================
 // Base de datos de precios por m² en Lima (Agosto 2024)
 // ===============================
@@ -937,4 +968,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
 
