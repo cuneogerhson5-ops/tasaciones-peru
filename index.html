@@ -8,29 +8,30 @@
 </head>
 <body>
   <!-- Pantalla de login -->
-    <div id="loginContainer" class="container">
-        <h2>🔐 Acceso al Sistema</h2>
-        <input type="password" id="password" placeholder="Ingrese la contraseña">
-        <br><br>
-        <button onclick="checkLogin()">Ingresar</button>
-        <div id="loginError" class="error"></div>
-    </div>
+  <div id="loginContainer" class="container">
+      <h2>🔐 Acceso al Sistema</h2>
+      <input type="password" id="password" placeholder="Ingrese la contraseña">
+      <br><br>
+      <button onclick="checkLogin()">Ingresar</button>
+      <div id="loginError" class="error" style="display: none;"></div>
+  </div>
 
-    <!-- Pantalla principal (oculta al inicio) -->
-    <div id="mainContainer" class="container" style="display: none;">
-        <h2>✅ Bienvenido al Sistema</h2>
-        <p>Has ingresado correctamente.</p>
-        <button onclick="logout()">Cerrar Sesión</button>
-    </div> 
-  <div class="container">
-    <h1>Tasación de Inmuebles en Lima</h1>
-    <form id="calc">
-      <div class="form-group">
-        <label for="distrito">Distrito:</label>
-        <select id="distrito" required>
-          <option value="">Selecciona un distrito</option>
-        </select>
-      </div>
+  <!-- Pantalla principal (oculta al inicio) -->
+  <div id="mainContainer" class="container" style="display: none;">
+      <h2>✅ Bienvenido al Sistema</h2>
+      <p>Has ingresado correctamente.</p>
+      <button onclick="logout()">Cerrar Sesión</button>
+
+      <!-- Aquí va la calculadora -->
+      <div class="calculator">
+        <h1>Tasación de Inmuebles en Lima</h1>
+        <form id="calc">
+          <div class="form-group">
+            <label for="distrito">Distrito:</label>
+            <select id="distrito" required>
+              <option value="">Selecciona un distrito</option>
+            </select>
+          </div>
 
       <div class="form-group">
         <label for="zona">Zona:</label>
@@ -140,4 +141,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
